@@ -1,0 +1,578 @@
+/*    --------------------------  Basic variable created     ----------------------  */
+
+:root{
+
+    /* --bordercolor1:black;
+    --bordercolor2:rgb(168, 164, 164);
+    --bordercolor3:rgb(196, 114, 235);
+    --bordercolor4:green;
+    --bordercolor5:yellow;
+    --bordercolor6:red;  */
+
+
+
+    --bg-searchtheme1:#fce8fc;
+    --bg-searchtheme2:#893eeb;
+    --bg-searchtheme3:#fcbf19;
+    --bg-fav-sticker:red;
+    --bg-backbutton:orange;
+
+
+
+}
+
+/*  --------------------------- Default -------------------------- */
+
+
+*{
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+body{
+    background-image: url(images/mealall3.jpeg);
+    background-repeat: no-repeat;
+    background-size:cover;
+    min-height: 600px;
+    padding: 0;
+    margin: 0;
+
+    
+}
+
+
+
+/* ---------------------------------------- Nav (top area) ------------------------------- */
+
+nav{
+    height:150px;
+    background-image: url(images/mealsWideNav.jpg);
+    opacity: 0.;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+}
+
+/* heading  */
+
+#myhead{
+    font-family: sans-serif;
+    letter-spacing: 1pt;
+    font-size: 30px;
+    min-width: 100px;
+    height: 50px;
+    color: aliceblue;
+    background-image:linear-gradient(45deg,rgb(151, 9, 170),rgb(255, 153, 0)) ;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    position: absolute;
+    left:5px;
+    top: 5px;
+    cursor: default;
+    
+
+}
+
+/* ---------------- Search box  ------------- */
+
+#search-box{
+    width:60vw;
+    height:40px;
+    padding-top: 10px;
+    border-radius: 13px 13px 0px 0px; 
+    background-color: var(--bg-searchtheme1);
+    opacity: 1;
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid white;
+    position:relative;
+    box-shadow: 2px 2px 13px 3px grey;
+}
+
+
+#input-text{
+  width:80%;
+  height:30px;
+  font-size: medium;
+  border:none;
+  background-color:var(--bg-searchtheme1);
+}
+
+input{
+    text-indent:20px;
+    margin-top: 7px;
+}
+
+input:focus{
+    outline: none;
+   
+  }
+
+  input::placeholder{
+    /* text-align: center; */
+   
+    font-size: medium;
+    font-weight: 100;
+    letter-spacing: 0.9;
+    
+}  
+
+#search-icon{
+   background-image: url(images/icons8-meal-100.png);
+   background-color:var(--bg-searchtheme1); 
+   background-repeat: no-repeat;
+   background-size: contain;
+   height:30px;
+   width:30px;
+  
+ 
+}
+
+
+
+/* --------------- Dropdown in search box----------  */
+#dropdown{
+   
+    width: 100%;
+    min-height: 0px;
+    background-color: var(--bg-searchtheme1);
+    border-radius:0px 0px 13px 13px;
+
+    position: absolute;
+    top:38px;
+   
+}
+
+#dropdown ul{
+ list-style: none;
+ padding-left: 0;
+ 
+}
+
+#dropdown ul li {
+
+    width: 100%;
+    height: 65px;
+    padding: 7px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid var(--bordercolor1);
+    
+  transition: 300ms;
+
+}
+
+#dropdown ul> li> div {
+    cursor: default;
+}
+
+#dropdown ul li:hover {
+    background-color: #ddb7f7;
+}
+
+.list-image{
+ width: 50px;
+ height:50px;
+ border: 1px solid var(--bordercolor1);
+ background-repeat: no-repeat;
+ background-size: contain;
+ border-radius: 3px;
+ 
+}
+
+.list-name{
+  width:30%;
+  height:auto;
+  border: 1px solid var(--bordercolor2);
+  
+}
+
+.list-fav{
+   
+   width:27%;
+   min-width: 100px;
+   min-height:50%;
+   padding: 5px;
+   border: 1px solid var(--bordercolor3);
+   text-align: center;
+   border-radius: 5px;
+   transition: 800ms;
+}
+
+.list-fav:hover{
+    background-color: #fc7419;
+}
+
+
+.list-category{
+   width:20%;
+   height:auto;
+   border: 1px solid var(--bordercolor4);
+   
+}
+
+
+
+
+/* ---------Favorate button in homepage)------*/
+
+#myfav{
+    width: 140px;
+    height: 40px;
+    background-image:linear-gradient(45deg,rgb(229, 121, 243),rgb(255, 219, 164)) ;
+    text-align: center;
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.5pt;
+    padding: 11px;
+    position: absolute;
+    right:5px;
+    top: 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: 300ms;
+
+}
+#myfav:hover{
+    background-image:linear-gradient(45deg,rgb(202, 136, 211),rgb(245, 153, 153)) ;
+    color: rgb(2, 72, 129);
+}
+
+
+
+
+
+
+/* --------------*****-------- Favorate.html Page CSS -------*******--------- */
+
+#back-button{
+
+    width:80px;
+    height:35px;
+    padding: 9px;
+    font-weight: 600;
+    font-family: sans-serif;
+    text-align: center;
+    background-image:linear-gradient(45deg,rgb(170, 20, 9),rgb(255, 251, 0)) ;
+    border-radius: 5px;
+    position: absolute;
+    left:5px;
+    top:5px;
+    cursor: pointer;
+    
+    
+}
+
+
+#back-button:hover{
+    background-image:linear-gradient(135deg,rgb(170, 154, 9),rgb(255, 251, 0)) ;
+   
+}
+
+#fav-sticker{
+
+    width:180px;
+    height:70px;
+    font-size: 25px ;
+    font-family: sans-serif;
+    padding: 19px 10px;
+    text-align: center;
+    background-image:linear-gradient(45deg,rgb(226, 11, 255),rgb(238, 255, 0)) ;
+    border-radius: 5px;
+    cursor: default;
+    
+}
+
+
+#favorite-page{
+
+    width:100vw;
+    height:auto;
+    background-image:linear-gradient(45deg,rgb(199, 203, 255),rgb(240, 216, 180)) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border: 1px solid var(--bordercolor1);
+
+}
+           
+
+
+#fav-list{
+
+    width:99vw;
+    min-height:0px;
+    
+    display: flex;
+
+    border: 1px solid var(--bordercolor1);
+
+
+}
+
+#fav-list > ul {
+   width: 100%;
+   height: auto;
+   list-style: none;
+   padding-left: 0;
+   margin: 0;
+  
+   border: 1px solid var(--bordercolor2);
+}
+
+#fav-list > ul >li{
+    width:100%;
+    height:140px;
+    list-style: none;
+    padding-left: 0;
+    padding: 20px 5px ;
+    border: 1px solid var(--bordercolor3);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    
+    
+    
+    
+   
+   
+ }
+
+ #fav-list > ul >li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(-45deg, rgb(252, 215, 148), rgb(255, 181, 71));
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    z-index: 0;
+}
+
+#fav-list > ul >li:hover::before {
+    opacity: 1;
+}
+
+#fav-list > ul >li > * {
+    position: relative;
+    z-index: 1;
+}
+
+ #fav-list > ul >li>div{
+    height: 30px;
+    transition: 800ms;
+    cursor: default;
+   
+ }
+
+.fav-list-image{
+    min-width:85px;
+    min-height:85px;
+    background-size: contain;
+    border: 1px solid var(--bordercolor4);
+    border-radius: 10px;
+    box-shadow: 0px 0px 13px 1px gray;
+
+}
+.fav-list-name{
+    width:40%;
+    font-weight: 500;
+    font-size: 19px ;
+    letter-spacing: 1pt;
+    padding-left: 20px;
+    border: 1px solid var(--bordercolor4);
+
+}
+.fav-list-category{
+    width:30%;
+    border: 1px solid var(--bordercolor4);
+}
+.fav-list-removebtn{
+    width:20px;
+    text-align: center;
+    padding: 3px;
+    /* background-image:linear-gradient(rgb(255, 166, 0),rgb(219, 191, 63)) ;
+    border-radius: 5px; */
+    background-image: url(images/removeOff.svg);
+    background-repeat: no-repeat;
+    border: 1px solid var(--bordercolor4);
+    cursor: pointer;
+    transition: 800ms;
+}
+
+.fav-list-removebtn:hover{
+    /* background-image:linear-gradient(0deg,rgb(252, 148, 148),rgb(255, 71, 215)) ;
+     */
+     background-image: url(images/removeOn.svg);
+     background-repeat: no-repeat;
+   
+}
+
+
+/*     ----- ********-----      Mealdetail.html Page  --------***********------   */
+
+
+#meal-name{
+
+    /* min-width:100px; */
+    width:auto;
+    max-width:80vw;
+
+    min-height:20px;
+    padding:9px 25px;
+    font-size: 4vw;
+    letter-spacing: 1pt;   
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    color: rgb(229, 215, 243);
+    opacity: 0.9;
+
+    background-image:linear-gradient(45deg,red,blue);
+    border: 1px solid var(--bordercolor1);
+    border-radius: 5px;
+    cursor: default;
+}
+
+
+#mealmiddlesection{
+
+
+    width:100%;
+    height:auto;
+    background-image:url(images/vegetablesright.jpg);
+    background-size:auto;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+     align-items: center; 
+     padding: 30px; 
+
+    border: 1px solid var(--bordercolor2);
+
+}
+
+#meal-image{
+
+    width:50vw;
+    max-width: 300px;
+    height:50vw;
+    max-height:300px ;
+    background-size:cover;
+    background-repeat: no-repeat;
+
+    border: 1px solid var(--bordercolor3);
+    border-radius: 9px;
+    box-shadow: 0px 0px 23px 5px black;
+}
+
+#meal-detail{
+
+    min-width:30vw;
+    height:auto;
+   
+   
+    border: 1px solid var(--bordercolor3);
+    cursor: default;
+
+}
+
+#meal-detail >ul {
+    list-style: none;
+    padding: 13px;
+
+}
+#meal-detail >ul>li{
+   
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 2vh;
+    font-size: 2vw;
+    letter-spacing: 0.8pt;
+    color: #fce8fc;
+    
+}
+
+#meal-detail >ul>li>div{
+    cursor: default;
+}
+    
+
+#meal-detail >ul>li>span{
+    height:40px;
+ font-style: italic;
+ letter-spacing: 0.9pt; 
+ color: #f5c7d1; 
+ 
+}
+
+#youtube-link-button{
+    width:100%;
+    margin-top: 19px;
+    text-align: center;
+}
+
+#youtube-link-button>a{
+    text-decoration: none;
+    color: #ebbd3e;
+    transition: 0.3s;
+}
+#youtube-link-button>a:hover{
+    color: #ff934b;
+    text-decoration: underline;
+}
+
+#meal-bottom-section{
+
+    width:100%;
+    min-height:30vh;
+    margin: auto;
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--bordercolor2);
+    background-image: url(images/instruction.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+#meal-instruction{
+
+    width:95%;
+    min-height:25vh;
+     margin-bottom: 30px;
+    border: 1px solid var(--bordercolor3);
+   
+}
+#meal-bottom-section> h3{
+    font-size: 5vh;
+    color: #ebbd3e;
+    cursor: default;
+}
+
+#meal-instruction > p{
+    color: beige;
+    font-family: sans-serif;
+    text-indent: 30px;
+    letter-spacing: 0.8pt;
+    line-height: 18pt;
+    text-align: justify;
+    margin-bottom: 20px;
+    cursor: default;
+}
+
