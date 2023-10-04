@@ -22,7 +22,9 @@
 }
 
 /*  --------------------------- Default -------------------------- */
-
+html{
+    height:100vh;
+}
 
 *{
     box-sizing: border-box;
@@ -79,8 +81,10 @@ nav{
 /* ---------------- Search box  ------------- */
 
 #search-box{
-    width:60vw;
+    width:70vw;
+    max-width:600px;
     height:40px;
+    margin-top: 45vh;
     padding-top: 10px;
     border-radius: 13px 13px 0px 0px; 
     background-color: var(--bg-searchtheme1);
@@ -138,18 +142,25 @@ input:focus{
 #dropdown{
    
     width: 100%;
-    min-height: 0px;
+    min-height: 10px;
+   
     background-color: var(--bg-searchtheme1);
     border-radius:0px 0px 13px 13px;
 
     position: absolute;
     top:38px;
    
+   
+   
 }
 
 #dropdown ul{
  list-style: none;
  padding-left: 0;
+ margin:8px 0px;
+ min-height: 0;
+ max-height: 55vh;
+ overflow-y:scroll ; 
  
 }
 
@@ -162,10 +173,22 @@ input:focus{
     justify-content: space-evenly;
     align-items: center;
     border: 1px solid var(--bordercolor1);
-    
-  transition: 300ms;
+    overflow: hidden;
+    position: relative;
+    animation: mymove 2000ms ease-in-out ;
+   
 
 }
+
+@keyframes mymove {
+    0%   { height: 0px;padding:0px; opacity: 0; }
+    55%  {  height: 65px;}
+    60%  { opacity:0.2;}
+    65%  {opacity:0.5;}
+    75%  {opacity:0.6;}
+    85%  {opacity:0.8;}
+    100% {  opacity: 1;}
+  }
 
 #dropdown ul> li> div {
     cursor: default;
@@ -194,19 +217,21 @@ input:focus{
 
 .list-fav{
    
-   width:27%;
-   min-width: 100px;
-   min-height:50%;
-   padding: 5px;
+   width:29px;
+   height:29px;
+   background-image: url(./images/heart-regular.svg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 2px;
    border: 1px solid var(--bordercolor3);
    text-align: center;
    border-radius: 5px;
    transition: 800ms;
 }
 
-.list-fav:hover{
+/* .list-fav:hover{
     background-color: #fc7419;
-}
+} */
 
 
 .list-category{
@@ -576,3 +601,22 @@ input:focus{
     cursor: default;
 }
 
+
+@media(max-width:642px){
+
+    #search-box{
+        width:90vw;
+        margin-top: 30vh;
+    }
+
+    #dropdown ul{
+        max-height: 65vh;
+    }
+
+    
+    
+
+   
+
+
+}

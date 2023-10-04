@@ -38,7 +38,7 @@ async function displaySearchList(meals){
 
                     <div class="list-name" id="${item.idMeal}">${item.strMeal}</div>
                     <div class="list-category" id="${item.idMeal}">${item.strCategory}</div>
-                    <div class="list-fav" id="${item.idMeal}" style=" cursor: pointer;">Add favorites</div>
+                    <div class="list-fav" id="${item.idMeal}" style=" cursor: pointer;"></div>
                 
                 `;
         
@@ -232,8 +232,16 @@ function allInputClick(e){
     // favorite button
     if (clicked.classList.contains('list-fav')) {
         let favId = clicked.id;
+
+        if(!clicked.classList.contains('checked')){
         addfav(favId);
-        clicked.style.backgroundColor = '#d40303';
+        clicked.style.backgroundImage = 'url(./images/heart-solid.svg)';
+        clicked.classList.add('checked');
+        }else{
+            deletefav(favId);
+            clicked.style.backgroundImage = 'url(./images/heart-regular.svg)';
+            clicked.classList.remove('checked'); 
+        }
         console.log(favId);
       }
 
