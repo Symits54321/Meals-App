@@ -276,7 +276,7 @@ function allInputClick(e){
     }
 
      // Mealdetailpage Open
-     if((clicked.parentNode.tagName === 'LI' || clicked.tagName === 'LI') && !clicked.classList.contains('list-fav') ){ 
+     if((clicked.parentNode.tagName === 'LI' || clicked.tagName === 'LI'|| clicked.classList.contains('list-name') || clicked.classList.contains('list-category')) && !clicked.classList.contains('list-fav') ){ 
 
         if(clicked.classList.contains('fav-list-removebtn')){
             return;
