@@ -179,7 +179,7 @@ input:focus{
     border: 1px solid var(--bordercolor1);
     overflow: hidden;
     position: relative;
-    animation: mymove 2000ms ease-in-out ;
+    animation: mymove 500ms ease-in-out ;
    
 
 }
