@@ -249,7 +249,7 @@ function allInputClick(e){
 
     // My favorate page button  
 
-      if(clicked.id === 'myfav'){
+      if(clicked.id === 'myfav' || clicked.parentNode.id === 'myfav' ){
         // Open new webpage /favorites.html
         window.location.href = "./favorites.html";
         
