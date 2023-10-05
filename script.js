@@ -35,9 +35,10 @@ async function displaySearchList(meals){
                 list.innerHTML = `
 
                     <div class="list-image" id="${item.idMeal}"style="background-image:url(${item.strMealThumb});"></div>
-
+                    <div class="list-desc">
                     <div class="list-name" id="${item.idMeal}">${item.strMeal}</div>
                     <div class="list-category" id="${item.idMeal}">${item.strCategory}</div>
+                    </div>
                     <div class="list-fav" id="${item.idMeal}" style=" cursor: pointer;"></div>
                 
                 `;
@@ -232,9 +233,10 @@ function allInputClick(e){
     // favorite button
     if (clicked.classList.contains('list-fav')) {
         let favId = clicked.id;
-
+        //clicked.style.backgroundColor="transparent";
         if(!clicked.classList.contains('checked')){
         addfav(favId);
+       
         clicked.style.backgroundImage = 'url(./images/heart-solid.svg)';
         clicked.classList.add('checked');
         }else{
@@ -310,7 +312,7 @@ function allInputClick(e){
 
 //Actual event listener on click
 document.addEventListener('click',allInputClick);
-
+//document.addEventListener("touchstart", allInputClick); 
 
 
 
