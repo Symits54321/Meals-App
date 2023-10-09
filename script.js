@@ -62,12 +62,21 @@ async function filterMeals(meals,text){
 // gives meal object from API (having meals name starting with first letter of searchinput) and diplay management
 async function giveSuggestion(text){
 
-    let dataFetchedFirstLetter = await fetch(`${API_URL}search.php?f=${text.charAt(0)}`);
-    let data = await dataFetchedFirstLetter.json();
-    let meals = await filterMeals(data.meals,text);
+    try {
+        // Your code to make the API request here
+        let dataFetchedFirstLetter = await fetch(`${API_URL}search.php?f=${text.charAt(0)}`);
+        let data = await dataFetchedFirstLetter.json();
+        let meals = await filterMeals(data.meals,text);
+    
+        displaySearchList(meals);
+    
+      } catch (error) {
+        console.error("An error occurred:", error);
+        // Display an error message to the user or handle the error appropriately.
+        alert("API not responding");
+      }
 
-    displaySearchList(meals);
-
+  
 
 
 }
@@ -215,6 +224,9 @@ searchInput.addEventListener('keyup', async (e) => {
     if(inputText){
         let meals = await
         giveSuggestion(inputText);
+        if(!meals){
+            alert("Unable to load meals");
+        }
     }else{
         searchSuggestion.innerHTML = ''; 
     }
@@ -224,7 +236,10 @@ searchInput.addEventListener('keyup', async (e) => {
 
 
 
-//Event Listener function for mouseclicks
+//------------&&&&&&________EVENT LISTENER--- function for mouseclicks______*******_________******_________
+
+
+
 function allInputClick(e){
    
    
