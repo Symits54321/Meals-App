@@ -73,7 +73,7 @@ async function giveSuggestion(text){
       } catch (error) {
         console.error("An error occurred:", error);
         // Display an error message to the user or handle the error appropriately.
-        alert("API not responding");
+        alert("Meals App says :- API not responding ,, Check :- www.themealdb.com");
       }
 
   
@@ -223,13 +223,20 @@ searchInput.addEventListener('keyup', async (e) => {
 
     if(inputText){
         let meals = await
-        giveSuggestion(inputText);
-        if(!meals){
-            alert("Unable to load meals");
-        }
+        giveSuggestion(inputText).then(()=>{
+
+            if(!meals){
+                alert("Meals app ays:- Unable to load meals");
+                
+            }
+
+        });
+
+        //when you remove what you wrote in searchbox
     }else{
         searchSuggestion.innerHTML = ''; 
     }
+
    
 });
 }
